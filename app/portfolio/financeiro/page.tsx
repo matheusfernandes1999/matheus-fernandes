@@ -44,7 +44,7 @@ export default function FinanceiroPage() {
             className="w-full max-w-2xl mb-8 sm:mb-10" // Container for the image
           >
             <Image
-              src="https://placehold.co/1200x500/E2E8F0/4A5568?text=Solucoes+Financeiras+Modernas"
+              src="https://source.unsplash.com/1200x500/?finance,business,modern,technology"
               alt="Soluções Financeiras Modernas"
               width={1200}
               height={500}
@@ -101,7 +101,7 @@ export default function FinanceiroPage() {
             variants={fadeInUp}
           >
             <Image
-              src="https://placehold.co/600x400/E9D8FD/4A276B?text=Consultoria+Detalhada"
+              src="https://source.unsplash.com/600x400/?investment,consulting,chart"
               alt="Consultoria de Investimentos Detalhada"
               width={600}
               height={400}
@@ -122,7 +122,7 @@ export default function FinanceiroPage() {
             variants={fadeInUp}
           >
             <Image
-              src="https://placehold.co/600x400/D6F9E8/2D6A4F?text=Pagamentos+Eficientes"
+              src="https://source.unsplash.com/600x400/?payment,digital,transaction"
               alt="Plataformas de Pagamento Eficientes"
               width={600}
               height={400}
@@ -143,7 +143,7 @@ export default function FinanceiroPage() {
             variants={fadeInUp}
           >
             <Image
-              src="https://placehold.co/600x400/E0F2FE/0C4A6E?text=Seguranca+Garantida"
+              src="https://source.unsplash.com/600x400/?security,compliance,data"
               alt="Análise de Risco e Segurança Garantida"
               width={600}
               height={400}
@@ -184,7 +184,7 @@ export default function FinanceiroPage() {
             variants={fadeInUp}
           >
             <Image
-              src="https://placehold.co/400x300/CFFAFE/0B5986?text=Seguranca"
+              src="https://source.unsplash.com/400x300/?security,lock,data,protection"
               alt="Segurança Avançada"
               width={400}
               height={300}
@@ -204,7 +204,7 @@ export default function FinanceiroPage() {
             variants={fadeInUp}
           >
             <Image
-              src="https://placehold.co/400x300/D1F7C4/20572A?text=IA+Financeira"
+              src="https://source.unsplash.com/400x300/?artificial-intelligence,data,analytics"
               alt="Tecnologia com IA"
               width={400}
               height={300}
@@ -224,7 +224,7 @@ export default function FinanceiroPage() {
             variants={fadeInUp}
           >
             <Image
-              src="https://placehold.co/400x300/FEF9C3/7A4F1B?text=Suporte+Agil"
+              src="https://source.unsplash.com/400x300/?support,customer-service,team"
               alt="Suporte Dedicado"
               width={400}
               height={300}
@@ -244,7 +244,7 @@ export default function FinanceiroPage() {
             variants={fadeInUp}
           >
             <Image
-              src="https://placehold.co/400x300/FDD8E1/7A1B4C?text=Personalizacao"
+              src="https://source.unsplash.com/400x300/?customization,solution,tailored"
               alt="Soluções Personalizadas"
               width={400}
               height={300}

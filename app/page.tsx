@@ -133,7 +133,7 @@ export default function Home() {
             >
               <div className="relative w-full h-56">
                 <Image
-                  src="https://placehold.co/600x400/1A202C/A0AEC0?text=Projeto+Financeiro"
+                  src="https://source.unsplash.com/600x400/?finance,corporate,professional"
                   alt="Projeto Financeiro Exemplo"
                   layout="fill"
                   objectFit="cover"
@@ -162,7 +162,7 @@ export default function Home() {
             >
               <div className="relative w-full h-56">
                 <Image
-                  src="https://placehold.co/600x400/1A202C/A0AEC0?text=Projeto+Restaurante"
+                  src="https://source.unsplash.com/600x400/?restaurant,food,modern-dining"
                   alt="Projeto Restaurante Exemplo"
                   layout="fill"
                   objectFit="cover"
@@ -191,7 +191,7 @@ export default function Home() {
             >
               <div className="relative w-full h-56">
                 <Image
-                  src="https://placehold.co/600x400/1A202C/A0AEC0?text=Projeto+Idiomas"
+                  src="https://source.unsplash.com/600x400/?education,language,learning,online"
                   alt="Projeto Idiomas Exemplo"
                   layout="fill"
                   objectFit="cover"
