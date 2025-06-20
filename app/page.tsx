@@ -1,16 +1,16 @@
 "use client";
 import Image from "next/image";
-import { motion } from 'framer-motion';
+import { motion, easeInOut, easeOut, backOut } from 'framer-motion';
 
 // Animation Variants
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeInOut" } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeInOut } }
 };
 
 const fadeInSlight = { // For elements that need a more subtle entry
   hidden: { opacity: 0, y: 10 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: easeOut } }
 };
 
 const staggerContainer = {
@@ -26,12 +26,12 @@ const staggerContainer = {
 
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.95, y: 20 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease: easeOut } }
 };
 
 const skillBadgeVariants = {
   hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: "backOut" } } // "backOut" for a slight pop
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: backOut } } // "backOut" for a slight pop
 };
 
 
@@ -83,7 +83,7 @@ export default function Home() {
               className="block w-2/3 h-1 bg-secondary-accent mx-auto mt-2"
               initial={{ width: 0 }}
               whileInView={{ width: "66.66%" }}
-              transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.7, delay: 0.3, ease: easeOut }}
               viewport={{ once: true, amount: 0.5 }}
             ></motion.span>
           </motion.h2>
@@ -114,7 +114,7 @@ export default function Home() {
               className="block w-2/3 h-1 bg-primary-accent mx-auto mt-2"
               initial={{ width: 0 }}
               whileInView={{ width: "66.66%" }}
-              transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.7, delay: 0.3, ease: easeOut }}
               viewport={{ once: true, amount: 0.5 }}
             ></motion.span>
           </motion.h2>
@@ -227,7 +227,7 @@ export default function Home() {
               className="block w-2/3 h-1 bg-secondary-accent mx-auto mt-2"
               initial={{ width: 0 }}
               whileInView={{ width: "66.66%" }}
-              transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.7, delay: 0.3, ease: easeOut }}
               viewport={{ once: true, amount: 0.5 }}
             ></motion.span>
           </motion.h2>
@@ -275,7 +275,7 @@ export default function Home() {
                                                 // Keeping as is for now, but might need refinement if span doesn't animate as expected with parent.
                                                 // Corrected: Made the underline part of the h2's animation by including it within the h2's motion component or animating it separately triggered by whileInView on the h2.
                                                 // For now, the span animation is fine as a separate motion component triggered by h2's visibility.
-              transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }} // Delay to start after title fades in
+              transition={{ duration: 0.7, delay: 0.3, ease: easeOut }} // Delay to start after title fades in
               viewport={{ once: true, amount: 0.5 }} // Re-ensure it animates when h2 is visible
             ></motion.span>
           </motion.h2>
