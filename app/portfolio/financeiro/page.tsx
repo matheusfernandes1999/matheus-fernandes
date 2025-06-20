@@ -1,6 +1,7 @@
 // app/portfolio/financeiro/page.tsx
 "use client";
 import Link from 'next/link';
+import Image from 'next/image'; // Ensure Image is imported
 import { motion, easeInOut, easeOut } from 'framer-motion';
 
 // Animation Variants
@@ -37,12 +38,19 @@ export default function FinanceiroPage() {
           animate="visible"
           className="flex flex-col items-center w-full max-w-5xl" // Added max-width
         >
-          {/* Image Placeholder */}
+          {/* Image Placeholder Replaced with next/image */}
           <motion.div
-            className="w-full max-w-2xl h-64 sm:h-80 md:h-96 bg-gray-300 rounded-xl shadow-md mb-8 sm:mb-10 flex items-center justify-center"
-            variants={fadeIn} // Use the existing fadeIn variant
+            variants={fadeIn}
+            className="w-full max-w-2xl mb-8 sm:mb-10" // Container for the image
           >
-            <p className="text-gray-500 text-xl">Placeholder Imagem Principal</p>
+            <Image
+              src="https://placehold.co/1200x500/E2E8F0/4A5568?text=Solucoes+Financeiras+Modernas"
+              alt="Soluções Financeiras Modernas"
+              width={1200}
+              height={500}
+              className="rounded-xl shadow-md w-full h-auto" // w-full h-auto for responsiveness
+              priority
+            />
           </motion.div>
 
           <motion.h1
@@ -92,9 +100,13 @@ export default function FinanceiroPage() {
             className="bg-white shadow-xl rounded-xl p-6 flex flex-col items-center text-center"
             variants={fadeInUp}
           >
-            <div className="w-full h-40 bg-gray-300 rounded-md mb-6 flex items-center justify-center">
-              <p className="text-gray-500">Imagem Serviço</p>
-            </div>
+            <Image
+              src="https://placehold.co/600x400/E9D8FD/4A276B?text=Consultoria+Detalhada"
+              alt="Consultoria de Investimentos Detalhada"
+              width={600}
+              height={400}
+              className="rounded-md mb-6 w-full h-auto"
+            />
             <div className="p-2 mb-3 bg-green-100 rounded-full"> {/* Adjusted padding and margin */}
               <svg className="w-6 h-6 text-green-600" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"></path></svg>
             </div>
@@ -109,9 +121,13 @@ export default function FinanceiroPage() {
             className="bg-white shadow-xl rounded-xl p-6 flex flex-col items-center text-center"
             variants={fadeInUp}
           >
-            <div className="w-full h-40 bg-gray-300 rounded-md mb-6 flex items-center justify-center">
-              <p className="text-gray-500">Imagem Serviço</p>
-            </div>
+            <Image
+              src="https://placehold.co/600x400/D6F9E8/2D6A4F?text=Pagamentos+Eficientes"
+              alt="Plataformas de Pagamento Eficientes"
+              width={600}
+              height={400}
+              className="rounded-md mb-6 w-full h-auto"
+            />
             <div className="p-2 mb-3 bg-green-100 rounded-full"> {/* Adjusted padding and margin */}
               <svg className="w-6 h-6 text-green-600" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
             </div>
@@ -126,9 +142,13 @@ export default function FinanceiroPage() {
             className="bg-white shadow-xl rounded-xl p-6 flex flex-col items-center text-center"
             variants={fadeInUp}
           >
-            <div className="w-full h-40 bg-gray-300 rounded-md mb-6 flex items-center justify-center">
-              <p className="text-gray-500">Imagem Serviço</p>
-            </div>
+            <Image
+              src="https://placehold.co/600x400/E0F2FE/0C4A6E?text=Seguranca+Garantida"
+              alt="Análise de Risco e Segurança Garantida"
+              width={600}
+              height={400}
+              className="rounded-md mb-6 w-full h-auto"
+            />
             <div className="p-2 mb-3 bg-green-100 rounded-full"> {/* Adjusted padding and margin */}
               <svg className="w-6 h-6 text-green-600" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
             </div>
@@ -163,9 +183,13 @@ export default function FinanceiroPage() {
             className="bg-gray-50 shadow-xl rounded-xl p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6"
             variants={fadeInUp}
           >
-            <div className="w-32 h-32 sm:w-24 sm:h-24 md:w-32 md:h-32 flex-shrink-0 bg-gray-300 rounded-lg shadow-md flex items-center justify-center">
-              <p className="text-gray-500 text-sm">Img Destaque</p>
-            </div>
+            <Image
+              src="https://placehold.co/400x300/CFFAFE/0B5986?text=Seguranca"
+              alt="Segurança Avançada"
+              width={400}
+              height={300}
+              className="rounded-lg shadow-md w-full h-auto sm:w-24 sm:h-24 md:w-32 md:h-32 object-cover flex-shrink-0"
+            />
             <div className="text-center sm:text-left">
               <h3 className="text-xl font-semibold text-green-700 mb-2">Segurança Avançada</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -179,9 +203,13 @@ export default function FinanceiroPage() {
             className="bg-gray-50 shadow-xl rounded-xl p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6"
             variants={fadeInUp}
           >
-            <div className="w-32 h-32 sm:w-24 sm:h-24 md:w-32 md:h-32 flex-shrink-0 bg-gray-300 rounded-lg shadow-md flex items-center justify-center">
-              <p className="text-gray-500 text-sm">Img Destaque</p>
-            </div>
+            <Image
+              src="https://placehold.co/400x300/D1F7C4/20572A?text=IA+Financeira"
+              alt="Tecnologia com IA"
+              width={400}
+              height={300}
+              className="rounded-lg shadow-md w-full h-auto sm:w-24 sm:h-24 md:w-32 md:h-32 object-cover flex-shrink-0"
+            />
             <div className="text-center sm:text-left">
               <h3 className="text-xl font-semibold text-green-700 mb-2">Tecnologia com IA</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -195,9 +223,13 @@ export default function FinanceiroPage() {
             className="bg-gray-50 shadow-xl rounded-xl p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6"
             variants={fadeInUp}
           >
-            <div className="w-32 h-32 sm:w-24 sm:h-24 md:w-32 md:h-32 flex-shrink-0 bg-gray-300 rounded-lg shadow-md flex items-center justify-center">
-              <p className="text-gray-500 text-sm">Img Destaque</p>
-            </div>
+            <Image
+              src="https://placehold.co/400x300/FEF9C3/7A4F1B?text=Suporte+Agil"
+              alt="Suporte Dedicado"
+              width={400}
+              height={300}
+              className="rounded-lg shadow-md w-full h-auto sm:w-24 sm:h-24 md:w-32 md:h-32 object-cover flex-shrink-0"
+            />
             <div className="text-center sm:text-left">
               <h3 className="text-xl font-semibold text-green-700 mb-2">Suporte Dedicado</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -211,9 +243,13 @@ export default function FinanceiroPage() {
             className="bg-gray-50 shadow-xl rounded-xl p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6"
             variants={fadeInUp}
           >
-            <div className="w-32 h-32 sm:w-24 sm:h-24 md:w-32 md:h-32 flex-shrink-0 bg-gray-300 rounded-lg shadow-md flex items-center justify-center">
-              <p className="text-gray-500 text-sm">Img Destaque</p>
-            </div>
+            <Image
+              src="https://placehold.co/400x300/FDD8E1/7A1B4C?text=Personalizacao"
+              alt="Soluções Personalizadas"
+              width={400}
+              height={300}
+              className="rounded-lg shadow-md w-full h-auto sm:w-24 sm:h-24 md:w-32 md:h-32 object-cover flex-shrink-0"
+            />
             <div className="text-center sm:text-left">
               <h3 className="text-xl font-semibold text-green-700 mb-2">Soluções Personalizadas</h3>
               <p className="text-gray-600 text-sm leading-relaxed">

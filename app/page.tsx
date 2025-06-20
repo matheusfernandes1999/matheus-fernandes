@@ -133,10 +133,11 @@ export default function Home() {
             >
               <div className="relative w-full h-56">
                 <Image
-                  src="/project1.svg"
-                  alt="Placeholder para Soluções Financeiras" // Updated alt text
+                  src="https://placehold.co/600x400/1A202C/A0AEC0?text=Projeto+Financeiro"
+                  alt="Projeto Financeiro Exemplo"
                   layout="fill"
                   objectFit="cover"
+                  className="rounded-t-xl"
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
@@ -161,10 +162,11 @@ export default function Home() {
             >
               <div className="relative w-full h-56">
                 <Image
-                  src="/project2.svg"
-                  alt="Placeholder para Website para Restaurantes" // Updated alt text
+                  src="https://placehold.co/600x400/1A202C/A0AEC0?text=Projeto+Restaurante"
+                  alt="Projeto Restaurante Exemplo"
                   layout="fill"
                   objectFit="cover"
+                  className="rounded-t-xl"
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
@@ -189,10 +191,11 @@ export default function Home() {
             >
               <div className="relative w-full h-56">
                 <Image
-                  src="/project3.svg"
-                  alt="Placeholder para Plataforma EAD Idiomas" // Updated alt text
+                  src="https://placehold.co/600x400/1A202C/A0AEC0?text=Projeto+Idiomas"
+                  alt="Projeto Idiomas Exemplo"
                   layout="fill"
                   objectFit="cover"
+                  className="rounded-t-xl"
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
