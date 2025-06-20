@@ -1,103 +1,161 @@
-import Image from "next/image";
+import Image from "next/image"; // Keep for potential later use, e.g. icons
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      {/* Hero Section */}
+      <div className="min-h-screen flex flex-col justify-center items-center text-center px-6 sm:px-12 lg:px-24 py-12 bg-background text-text-primary">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight">
+          Hi, I'm <span className="text-primary-accent">Alex Doe</span> - Web Designer & Developer
+        </h1>
+        <p className="text-lg sm:text-xl text-text-secondary max-w-2xl mb-10 leading-relaxed">
+          I craft beautiful and functional websites. Passionate about modern design and cutting-edge technologies.
+        </p>
+        <a
+          href="#projects"
+          className="bg-primary-accent hover:bg-primary-accent/80 text-background font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-accent focus:ring-offset-background"
+        >
+          View My Work
+        </a>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      {/* About Me Section */}
+      <section id="about" className="py-16 sm:py-20 lg:py-24 px-6 sm:px-12 lg:px-24 bg-container-background text-text-primary">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-text-primary relative inline-block">
+            About Me
+            <span className="block w-2/3 h-1 bg-secondary-accent mx-auto mt-2"></span>
+          </h2>
+          <p className="text-lg sm:text-xl text-text-secondary leading-relaxed">
+            With 5 years of experience in the field, I specialize in creating responsive and user-friendly web applications. My toolkit includes React, Next.js, Tailwind CSS, and Figma. I'm dedicated to bringing creative visions to life through code and design. I am a lifelong learner, always eager to explore new technologies and improve my skillset to deliver exceptional digital experiences.
+          </p>
+        </div>
+      </section>
+
+      {/* Portfolio/Projects Section */}
+      <section id="projects" className="py-16 sm:py-20 lg:py-24 px-6 sm:px-12 lg:px-24 bg-background text-text-primary">
+        <div className="container mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-text-primary text-center relative inline-block left-1/2 -translate-x-1/2">
+            My Work
+            <span className="block w-2/3 h-1 bg-primary-accent mx-auto mt-2"></span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {/* Project Card 1 */}
+            <div className="bg-container-background rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col border border-neutral-800 hover:shadow-primary-accent/20">
+              <div className="relative w-full h-56"> {/* Increased height slightly */}
+                <Image
+                  src="/project1.svg"
+                  alt="Project Alpha placeholder image"
+                  layout="fill"
+                  objectFit="cover"
+                  // Removed rounded-md from here, will be handled by parent's overflow-hidden and rounded-xl
+                />
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-2xl font-semibold mb-3 text-primary-accent">Project Alpha</h3>
+                <p className="text-text-secondary mb-3 flex-grow">
+                  A modern e-commerce platform built with Next.js and Stripe, focusing on seamless user experience.
+                </p>
+                <p className="text-sm text-text-secondary/80 mb-4">
+                  <span className="font-semibold text-text-secondary">Tech:</span> React, Next.js, Tailwind CSS, Stripe
+                </p>
+                <a href="#" className="text-secondary-accent hover:text-secondary-accent/80 font-medium transition-colors self-start focus:outline-none focus:ring-1 focus:ring-secondary-accent rounded-sm">
+                  View Project &rarr;
+                </a>
+              </div>
+            </div>
+
+            {/* Project Card 2 */}
+            <div className="bg-container-background rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col border border-neutral-800 hover:shadow-primary-accent/20">
+              <div className="relative w-full h-56">
+                <Image
+                  src="/project2.svg"
+                  alt="Portfolio Site V2 placeholder image"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-2xl font-semibold mb-3 text-primary-accent">Portfolio Site V2</h3>
+                <p className="text-text-secondary mb-3 flex-grow">
+                  My personal portfolio showcasing my latest work and skills, built with a mobile-first approach.
+                </p>
+                <p className="text-sm text-text-secondary/80 mb-4">
+                  <span className="font-semibold text-text-secondary">Tech:</span> Next.js, Tailwind CSS, TypeScript
+                </p>
+                <a href="#" className="text-secondary-accent hover:text-secondary-accent/80 font-medium transition-colors self-start focus:outline-none focus:ring-1 focus:ring-secondary-accent rounded-sm">
+                  View Project &rarr;
+                </a>
+              </div>
+            </div>
+
+            {/* Project Card 3 (Optional - can add more) */}
+            <div className="bg-container-background rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col border border-neutral-800 hover:shadow-primary-accent/20">
+              <div className="relative w-full h-56">
+                <Image
+                  src="/project3.svg"
+                  alt="Client Dashboard placeholder image"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-2xl font-semibold mb-3 text-primary-accent">Client Dashboard</h3>
+                <p className="text-text-secondary mb-3 flex-grow">
+                  A data visualization dashboard for a SaaS product, enabling clients to track their metrics.
+                </p>
+                <p className="text-sm text-text-secondary/80 mb-4">
+                  <span className="font-semibold text-text-secondary">Tech:</span> React, Chart.js, Firebase
+                </p>
+                <a href="#" className="text-secondary-accent hover:text-secondary-accent/80 font-medium transition-colors self-start focus:outline-none focus:ring-1 focus:ring-secondary-accent rounded-sm">
+                  View Project &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-16 sm:py-20 lg:py-24 px-6 sm:px-12 lg:px-24 bg-container-background text-text-primary">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-text-primary relative inline-block">
+            Skills
+            <span className="block w-2/3 h-1 bg-secondary-accent mx-auto mt-2"></span>
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+            {["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Figma", "Node.js", "GraphQL", "Firebase", "Git"].map((skill) => (
+              <span key={skill} className="bg-background border border-primary-accent text-primary-accent text-sm sm:text-base font-medium px-4 py-2 rounded-full shadow-sm hover:bg-primary-accent hover:text-background transition-colors duration-300 cursor-default">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-16 sm:py-20 lg:py-24 px-6 sm:px-12 lg:px-24 bg-background text-text-primary text-center">
+        <div className="container mx-auto max-w-xl">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-text-primary relative inline-block">
+            Get In Touch
+            <span className="block w-2/3 h-1 bg-primary-accent mx-auto mt-2"></span>
+          </h2>
+          <p className="text-lg sm:text-xl mb-8 text-text-secondary leading-relaxed">
+            Interested in working together or have a question? Reach out! My inbox is always open.
+          </p>
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:alex.doe@example.com"
+            className="bg-primary-accent hover:bg-primary-accent/80 text-background font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-accent focus:ring-offset-background"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+            Send Email
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-10 bg-container-background text-text-secondary text-center border-t border-neutral-700">
+        <p className="text-sm">&copy; 2024 Alex Doe. All rights reserved.</p>
       </footer>
-    </div>
+    </>
   );
 }

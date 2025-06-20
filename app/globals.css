@@ -1,26 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #121212; /* Dark background */
+  --container-background: #1E1E1E; /* Lighter container background */
+  --primary-accent: #4FD1C5; /* Teal */
+  --secondary-accent: #FFB400; /* Warm yellow/orange */
+  --text-primary: #E0E0E0;
+  --text-secondary: #A0A0A0;
+  --foreground: var(--text-primary); /* Default text color */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter); /* Use Inter font variable */
+  --font-mono: var(--font-geist-mono); /* Keeping geist-mono for now, can be removed if not used */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
