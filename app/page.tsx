@@ -49,7 +49,7 @@ export default function Home() {
           className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight"
           variants={fadeIn}
         >
-          Olá, eu sou <span className="text-primary-accent">Matheus Fernandes</span> - Web Designer & Developer
+          Olá, eu sou <span className="text-indigo-400">Matheus Fernandes</span> - Web Designer & Developer
         </motion.h1>
         <motion.p
           className="text-lg sm:text-xl text-text-secondary max-w-2xl mb-10 leading-relaxed"
@@ -59,7 +59,7 @@ export default function Home() {
         </motion.p>
         <motion.a
           href="#projetos"
-          className="bg-primary-accent hover:bg-primary-accent/80 text-background font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-accent focus:ring-offset-background"
+          className="bg-indigo-600 hover:bg-indigo-700 text-background font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-background"
           variants={fadeIn}
           whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
           whileTap={{ scale: 0.95 }}
@@ -80,7 +80,7 @@ export default function Home() {
           >
             Sobre Mim
             <motion.span
-              className="block w-2/3 h-1 bg-secondary-accent mx-auto mt-2"
+              className="block w-2/3 h-1 bg-indigo-500 mx-auto mt-2"
               initial={{ width: 0 }}
               whileInView={{ width: "66.66%" }}
               transition={{ duration: 0.7, delay: 0.3, ease: easeOut }}
@@ -111,7 +111,7 @@ export default function Home() {
           >
             Meus Projetos
             <motion.span
-              className="block w-2/3 h-1 bg-primary-accent mx-auto mt-2"
+              className="block w-2/3 h-1 bg-indigo-500 mx-auto mt-2"
               initial={{ width: 0 }}
               whileInView={{ width: "66.66%" }}
               transition={{ duration: 0.7, delay: 0.3, ease: easeOut }}
@@ -141,7 +141,7 @@ export default function Home() {
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-2xl font-semibold mb-3 text-primary-accent">Soluções Financeiras</h3>
+                <h3 className="text-2xl font-semibold mb-3 text-indigo-400">Soluções Financeiras</h3>
                 <p className="text-text-secondary mb-3 flex-grow">
                   Consultoria e desenvolvimento de plataformas para o setor financeiro.
                 </p>
@@ -170,7 +170,7 @@ export default function Home() {
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-2xl font-semibold mb-3 text-primary-accent">Website para Restaurantes</h3>
+                <h3 className="text-2xl font-semibold mb-3 text-indigo-400">Website para Restaurantes</h3>
                 <p className="text-text-secondary mb-3 flex-grow">
                   Criação de sites modernos e responsivos para restaurantes e delivery.
                 </p>
@@ -199,7 +199,7 @@ export default function Home() {
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-2xl font-semibold mb-3 text-primary-accent">Plataforma EAD Idiomas</h3>
+                <h3 className="text-2xl font-semibold mb-3 text-indigo-400">Plataforma EAD Idiomas</h3>
                 <p className="text-text-secondary mb-3 flex-grow">
                   Desenvolvimento de plataformas completas para ensino a distância de idiomas.
                 </p>
@@ -227,7 +227,7 @@ export default function Home() {
           >
             Habilidades
             <motion.span
-              className="block w-2/3 h-1 bg-secondary-accent mx-auto mt-2"
+              className="block w-2/3 h-1 bg-indigo-500 mx-auto mt-2"
               initial={{ width: 0 }}
               whileInView={{ width: "66.66%" }}
               transition={{ duration: 0.7, delay: 0.3, ease: easeOut }}
@@ -244,7 +244,7 @@ export default function Home() {
             {["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Figma", "Node.js", "GraphQL", "Firebase", "Git"].map((skill) => (
               <motion.span
                 key={skill}
-                className="bg-background border border-primary-accent text-primary-accent text-sm sm:text-base font-medium px-4 py-2 rounded-full shadow-sm hover:bg-primary-accent hover:text-background transition-colors duration-300 cursor-default"
+                className="bg-background border border-indigo-400 text-indigo-400 text-sm sm:text-base font-medium px-4 py-2 rounded-full shadow-sm hover:bg-indigo-400 hover:text-background transition-colors duration-300 cursor-default"
                 variants={skillBadgeVariants}
                 whileHover={{ scale: 1.1, y: -2, transition: { duration: 0.15 } }}
               >
@@ -270,7 +270,7 @@ export default function Home() {
           >
             Entre em Contato
             <motion.span
-              className="block w-2/3 h-1 bg-primary-accent mx-auto mt-2"
+              className="block w-2/3 h-1 bg-indigo-500 mx-auto mt-2"
               initial={{ width: 0 }}
               whileInView={{ width: "66.66%" }} // This will re-trigger if h2 is separate. Better to animate with h2 or make h2 container the motion el.
                                                 // For simplicity, let's assume the h2 variants={fadeInSlight} is enough for its own animation.
@@ -294,7 +294,7 @@ export default function Home() {
           >
             <motion.a
               href="mailto:matheusmb78@gmail.com"
-              className="bg-primary-accent hover:bg-primary-accent/80 text-background font-semibold px-8 py-4 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-accent focus:ring-offset-background transition-colors duration-300"
+              className="bg-indigo-600 hover:bg-indigo-700 text-background font-semibold px-8 py-4 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-background transition-colors duration-300"
               // variants={fadeIn} // Not needed, parent div handles this
               whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               whileTap={{ scale: 0.95 }}
@@ -305,7 +305,7 @@ export default function Home() {
               href="https://wa.me/5549936182324" // Make sure to use the correct phone number
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-primary-accent hover:bg-primary-accent/80 text-background font-semibold px-8 py-4 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-accent focus:ring-offset-background transition-colors duration-300"
+              className="bg-indigo-600 hover:bg-indigo-700 text-background font-semibold px-8 py-4 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-background transition-colors duration-300"
               // Using primary-accent as decided in the plan for consistency
               // variants={fadeIn} // Not needed, parent div handles this
               whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
