@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google"; // Import Inter
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Initialize Inter font
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-inter", // Define a CSS variable for Inter
 });
 
 export const metadata: Metadata = {
@@ -23,10 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className="dark"> {/* Enforce dark theme */}
+      <body className={`${inter.variable} font-sans antialiased`}> {/* Apply Inter and Tailwind's font-sans utility */}
         {children}
       </body>
     </html>
