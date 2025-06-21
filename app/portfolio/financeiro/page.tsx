@@ -44,7 +44,7 @@ export default function FinanceiroPage() {
             className="w-full max-w-2xl mb-8 sm:mb-10" // Container for the image
           >
             <Image
-              src="https://source.unsplash.com/1200x500/?finance,business,modern,technology"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=500&q=85"
               alt="Soluções Financeiras Modernas"
               width={1200}
               height={500}
@@ -101,7 +101,7 @@ export default function FinanceiroPage() {
             variants={fadeInUp}
           >
             <Image
-              src="https://source.unsplash.com/600x400/?investment,consulting,chart"
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80"
               alt="Consultoria de Investimentos Detalhada"
               width={600}
               height={400}
@@ -122,7 +122,7 @@ export default function FinanceiroPage() {
             variants={fadeInUp}
           >
             <Image
-              src="https://source.unsplash.com/600x400/?payment,digital,transaction"
+              src="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80"
               alt="Plataformas de Pagamento Eficientes"
               width={600}
               height={400}
@@ -143,7 +143,7 @@ export default function FinanceiroPage() {
             variants={fadeInUp}
           >
             <Image
-              src="https://source.unsplash.com/600x400/?security,compliance,data"
+              src="https://images.unsplash.com/photo-1563014959-7aaa83350992?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80"
               alt="Análise de Risco e Segurança Garantida"
               width={600}
               height={400}
@@ -184,7 +184,7 @@ export default function FinanceiroPage() {
             variants={fadeInUp}
           >
             <Image
-              src="https://source.unsplash.com/400x300/?security,lock,data,protection"
+              src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
               alt="Segurança Avançada"
               width={400}
               height={300}
@@ -204,7 +204,7 @@ export default function FinanceiroPage() {
             variants={fadeInUp}
           >
             <Image
-              src="https://source.unsplash.com/400x300/?artificial-intelligence,data,analytics"
+              src="https://images.unsplash.com/photo-1677442135722-5fbfd9e9e7b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
               alt="Tecnologia com IA"
               width={400}
               height={300}
@@ -224,7 +224,7 @@ export default function FinanceiroPage() {
             variants={fadeInUp}
           >
             <Image
-              src="https://source.unsplash.com/400x300/?support,customer-service,team"
+              src="https://images.unsplash.com/photo-1582212175178-040eee15b14c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
               alt="Suporte Dedicado"
               width={400}
               height={300}
@@ -244,7 +244,7 @@ export default function FinanceiroPage() {
             variants={fadeInUp}
           >
             <Image
-              src="https://source.unsplash.com/400x300/?customization,solution,tailored"
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
               alt="Soluções Personalizadas"
               width={400}
               height={300}
