@@ -42,7 +42,7 @@ export default function EscolaIdiomasPage() {
           variants={fadeIn}
         >
           <Image
-            src="https://source.unsplash.com/1600x900/?online-learning,language-course,students-studying"
+            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&h=900&q=85"
             alt="Estudantes aprendendo idiomas online"
             width={1600}
             height={900}
@@ -104,7 +104,7 @@ export default function EscolaIdiomasPage() {
             variants={fadeInUp}
           >
             <div className="w-full h-40 bg-gray-200 rounded-md mb-6 flex items-center justify-center overflow-hidden">
-              <Image src="https://source.unsplash.com/400x300/?education-icon,innovation,lightbulb" alt="Ícone de Inovação" width={400} height={300} className="w-full h-full object-cover" />
+              <Image src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" alt="Ícone de Inovação" width={400} height={300} className="w-full h-full object-cover" />
             </div>
             <h3 className="text-xl font-semibold text-blue-700 mb-3">Metodologia Inovadora</h3>
             <p className="text-gray-700 text-sm leading-relaxed">
@@ -118,7 +118,7 @@ export default function EscolaIdiomasPage() {
             variants={fadeInUp}
           >
             <div className="w-full h-40 bg-gray-200 rounded-md mb-6 flex items-center justify-center overflow-hidden">
-              <Image src="https://source.unsplash.com/400x300/?teacher,expert,language-coach" alt="Ícone de Professor Qualificado" width={400} height={300} className="w-full h-full object-cover" />
+              <Image src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" alt="Ícone de Professor Qualificado" width={400} height={300} className="w-full h-full object-cover" />
             </div>
             <h3 className="text-xl font-semibold text-blue-700 mb-3">Professores Qualificados</h3>
             <p className="text-gray-700 text-sm leading-relaxed">
@@ -132,7 +132,7 @@ export default function EscolaIdiomasPage() {
             variants={fadeInUp}
           >
             <div className="w-full h-40 bg-gray-200 rounded-md mb-6 flex items-center justify-center overflow-hidden">
-              <Image src="https://source.unsplash.com/400x300/?flexibility,online-schedule,anywhere" alt="Ícone de Flexibilidade" width={400} height={300} className="w-full h-full object-cover" />
+              <Image src="https://images.unsplash.com/photo-1495465798138-718f86d1a4f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" alt="Ícone de Flexibilidade" width={400} height={300} className="w-full h-full object-cover" />
             </div>
             <h3 className="text-xl font-semibold text-blue-700 mb-3">Flexibilidade Total</h3>
             <p className="text-gray-700 text-sm leading-relaxed">
@@ -146,7 +146,7 @@ export default function EscolaIdiomasPage() {
             variants={fadeInUp}
           >
             <div className="w-full h-40 bg-gray-200 rounded-md mb-6 flex items-center justify-center overflow-hidden">
-              <Image src="https://source.unsplash.com/400x300/?community,collaboration,students-group" alt="Ícone de Comunidade" width={400} height={300} className="w-full h-full object-cover" />
+              <Image src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" alt="Ícone de Comunidade" width={400} height={300} className="w-full h-full object-cover" />
             </div>
             <h3 className="text-xl font-semibold text-blue-700 mb-3">Comunidade Ativa</h3>
             <p className="text-gray-700 text-sm leading-relaxed">
@@ -180,7 +180,7 @@ export default function EscolaIdiomasPage() {
           >
             <div className="w-full h-56 sm:h-64">
               <Image
-                src="https://source.unsplash.com/600x400/?english,language-learning,books"
+                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80"
                 alt="Curso de Inglês Completo"
                 width={600}
                 height={400}
@@ -206,7 +206,7 @@ export default function EscolaIdiomasPage() {
           >
             <div className="w-full h-56 sm:h-64">
               <Image
-                src="https://source.unsplash.com/600x400/?spanish,language-course,culture"
+                src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80"
                 alt="Curso de Espanhol para Negócios"
                 width={600}
                 height={400}
@@ -232,7 +232,7 @@ export default function EscolaIdiomasPage() {
           >
             <div className="w-full h-56 sm:h-64">
               <Image
-                src="https://source.unsplash.com/600x400/?french,conversation,paris"
+                src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80"
                 alt="Curso de Francês Conversação"
                 width={600}
                 height={400}

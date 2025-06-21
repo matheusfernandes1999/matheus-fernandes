@@ -42,7 +42,7 @@ export default function RestaurantePage() {
           variants={fadeIn}
         >
           <Image
-            src="https://source.unsplash.com/1600x900/?restaurant,ambiance,elegant-dining"
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80"
             alt="Ambiente elegante de restaurante"
             width={1600}
             height={900}
@@ -225,15 +225,15 @@ export default function RestaurantePage() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
           {[
-            "restaurant-interior,elegant",
-            "food-presentation,gourmet",
-            "happy-customer,dining",
-            "chef,action,kitchen",
-            "cocktails,bar,drinks",
-            "restaurant-exterior,facade",
-            "dessert-table,sweets",
-            "wine-selection,cellar"
-          ].map((keywords, index) => (
+            "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80", // Interior
+            "https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80", // Food Presentation
+            "https://images.unsplash.com/photo-1554679665-f5537f187268?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80", // Happy Customers
+            "https://images.unsplash.com/photo-1600565193520-b0a6bdb0b397?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80", // Chef Action
+            "https://images.unsplash.com/photo-1551751299-1b51cab2694c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80", // Cocktails
+            "https://images.unsplash.com/photo-1554119927-27e6e9b5d4e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80", // Exterior
+            "https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80", // Dessert Table
+            "https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80"  // Wine Selection
+          ].map((imageUrl, index) => (
             <motion.div
               key={index}
               className="aspect-square rounded-lg shadow-lg overflow-hidden"
@@ -241,7 +241,7 @@ export default function RestaurantePage() {
               custom={index} // Potentially use for custom delay in stagger if needed, but staggerChildren should handle it
             >
               <Image
-                src={`https://source.unsplash.com/400x400/?${keywords}`}
+                src={imageUrl}
                 alt={`Galeria de momentos do restaurante - imagem ${index + 1}`}
                 width={400}
                 height={400}
