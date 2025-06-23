@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
       { // Keep the placehold.co domain in case it's still used or needed for testing
         protocol: 'https',
         hostname: 'placehold.co',

@@ -19,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark"> {/* Enforce dark theme */}
-      <body className={`${inter.variable} font-sans antialiased`}> {/* Apply Inter and Tailwind's font-sans utility */}
+    <html lang="en" className="dark"> 
+      <body className={`${inter.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

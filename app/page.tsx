@@ -2,6 +2,11 @@
 import Image from "next/image";
 import { motion, easeInOut, easeOut, backOut } from 'framer-motion';
 
+//Images
+import Money from '../public/imagens/money.jpg';
+import School from '../public/imagens/school.jpg';
+import Restaurant from '../public/imagens/food.jpg';
+
 // Animation Variants
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -133,7 +138,7 @@ export default function Home() {
             >
               <div className="relative w-full h-56">
                 <Image
-                  src="https://source.unsplash.com/600x400/?finance,corporate,professional"
+                  src={Money} // Replace with your actual image path
                   alt="Projeto Financeiro Exemplo"
                   layout="fill"
                   objectFit="cover"
@@ -162,7 +167,7 @@ export default function Home() {
             >
               <div className="relative w-full h-56">
                 <Image
-                  src="https://source.unsplash.com/600x400/?restaurant,food,modern-dining"
+                  src={Restaurant}
                   alt="Projeto Restaurante Exemplo"
                   layout="fill"
                   objectFit="cover"
@@ -191,7 +196,7 @@ export default function Home() {
             >
               <div className="relative w-full h-56">
                 <Image
-                  src="https://source.unsplash.com/600x400/?education,language,learning,online"
+                  src={School}
                   alt="Projeto Idiomas Exemplo"
                   layout="fill"
                   objectFit="cover"
