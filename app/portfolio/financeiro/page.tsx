@@ -1,13 +1,63 @@
 // app/portfolio/financeiro/page.tsx
 "use client";
 import Link from 'next/link';
-import Image from 'next/image'; // Ensure Image is imported
-import { motion, easeInOut, easeOut } from 'framer-motion';
+import Image from 'next/image';
+import { motion, useScroll, useTransform } from 'framer-motion';
+
+// High-quality financial images
+const heroImage = "https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80";
+const services = [
+  {
+    title: "Consultoria de Investimentos",
+    description: "Análise de perfil e objetivos para criar estratégias de investimento personalizadas e maximizar seus retornos.",
+    icon: "📈",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  },
+  {
+    title: "Plataformas de Pagamento",
+    description: "Soluções de pagamento digital seguras e eficientes para otimizar transações e expandir seu alcance no mercado.",
+    icon: "💳",
+    image: "https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  },
+  {
+    title: "Análise de Risco e Compliance",
+    description: "Ferramentas e consultoria para identificar riscos, garantir conformidade regulatória e proteger seus ativos.",
+    icon: "🛡️",
+    image: "https://images.unsplash.com/photo-1563014959-7aaa83350992?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  }
+];
+const differentiators = [
+  {
+    title: "Segurança Avançada",
+    description: "Protocolos de segurança de última geração para proteger seus dados e transações financeiras.",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  },
+  {
+    title: "Tecnologia com IA",
+    description: "Utilizamos inteligência artificial para fornecer insights precisos e otimizar suas decisões financeiras.",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  },
+  {
+    title: "Suporte Dedicado",
+    description: "Nossa equipe de especialistas está sempre pronta para oferecer suporte e orientação personalizada.",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  },
+  {
+    title: "Soluções Personalizadas",
+    description: "Adaptamos nossas soluções às necessidades específicas de cada cliente, garantindo o máximo de eficiência.",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  }
+];
 
 // Animation Variants
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeInOut } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeInOut" as const } }
+};
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } }
 };
 
 const staggerContainer = {
@@ -15,66 +65,96 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0.2,
     },
   },
 };
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easeOut } }
+const scaleUp = {
+  hidden: { scale: 0.95, opacity: 0 },
+  visible: { scale: 1, opacity: 1, transition: { duration: 0.5 } }
 };
 
 export default function FinanceiroPage() {
+  // Parallax effect for hero image
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 300], [0, -100]);
+
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-800 flex flex-col"> {/* Main container for the whole page */}
-      {/* Hero Section */}
-      <motion.section
-        className="flex flex-col items-center justify-center text-center py-12 sm:py-16 md:py-20 px-6 bg-white shadow-lg"
-      >
-        <motion.div // This div will now be the stagger container for hero content
-          variants={staggerContainer}
+    <div className="min-h-screen bg-gray-50 text-gray-800 flex flex-col">
+      {/* Hero Section with Parallax */}
+      <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+        {/* Parallax Background Image */}
+        <motion.div 
+          className="absolute inset-0 w-full h-full"
+          style={{ y }}
+        >
+          <Image
+            src={heroImage}
+            alt="Soluções Financeiras Modernas"
+            fill
+            className="object-cover"
+            priority
+            quality={100}
+          />
+          <div className="absolute inset-0 bg-[#00000085] bg-opacity-50" />
+        </motion.div>
+
+        {/* Hero Content */}
+        <motion.div
+          className="relative z-10 text-center px-6 max-w-4xl mx-auto"
           initial="hidden"
           animate="visible"
-          className="flex flex-col items-center w-full max-w-5xl" // Added max-width
+          variants={staggerContainer}
         >
-          {/* Image Placeholder Replaced with next/image */}
-          <motion.div
-            variants={fadeIn}
-            className="w-full max-w-2xl mb-8 sm:mb-10" // Container for the image
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=500&q=85"
-              alt="Soluções Financeiras Modernas"
-              width={1200}
-              height={500}
-              className="rounded-xl shadow-md w-full h-auto" // w-full h-auto for responsiveness
-              priority
-            />
-          </motion.div>
-
           <motion.h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-green-600 mb-6 leading-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white drop-shadow-lg"
             variants={fadeIn}
           >
-            Transformando o Futuro Financeiro com Tecnologia Inovadora
+            Transformando o Futuro Financeiro com <span className="text-green-300">Tecnologia Inovadora</span>
           </motion.h1>
           <motion.p
-            className="text-lg sm:text-xl text-gray-700 max-w-3xl mb-10"
+            className="text-xl sm:text-2xl text-white mb-10 drop-shadow-md"
             variants={fadeIn}
           >
             Oferecemos consultoria especializada e desenvolvemos plataformas robustas para otimizar seus investimentos e operações financeiras.
           </motion.p>
-          <motion.div variants={fadeIn}>
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            variants={fadeIn}
+          >
             <Link
               href="#servicos-financeiros"
-              className="inline-block bg-green-600 text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-white transition-colors duration-300"
+              className="inline-block bg-green-500 hover:bg-green-600 text-gray-900 font-semibold px-8 py-3 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 text-center"
             >
               Conheça Nossos Serviços
             </Link>
+            <Link
+              href="#contato"
+              className="inline-block bg-transparent text-white border-2 border-white hover:bg-white hover:text-gray-900 font-semibold px-8 py-3 rounded-lg shadow-sm transform hover:scale-105 transition-all duration-300 text-center"
+            >
+              Fale Conosco
+            </Link>
           </motion.div>
         </motion.div>
-      </motion.section>
+
+        {/* Scroll indicator */}
+        <motion.div
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          animate={{
+            y: [0, 10, 0],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </motion.div>
+      </section>
 
       {/* Services Section */}
       <motion.section
@@ -89,75 +169,37 @@ export default function FinanceiroPage() {
           className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12 sm:mb-16"
           variants={fadeIn}
         >
-          Nossos Serviços Especializados
+          Nossos <span className="text-green-500">Serviços Especializados</span>
         </motion.h2>
 
-        <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-6xl mx-auto"
-        >
-          {/* Service Card 1 */}
-          <motion.div
-            className="bg-white shadow-xl rounded-xl p-6 flex flex-col items-center text-center"
-            variants={fadeInUp}
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80"
-              alt="Consultoria de Investimentos Detalhada"
-              width={600}
-              height={400}
-              className="rounded-md mb-6 w-full h-auto"
-            />
-            <div className="p-2 mb-3 bg-green-100 rounded-full"> {/* Adjusted padding and margin */}
-              <svg className="w-6 h-6 text-green-600" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"></path></svg>
-            </div>
-            <h3 className="text-xl font-semibold text-green-700 mb-2">Consultoria de Investimentos</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Análise de perfil e objetivos para criar estratégias de investimento personalizadas e maximizar seus retornos.
-            </p>
-          </motion.div>
-
-          {/* Service Card 2 */}
-          <motion.div
-            className="bg-white shadow-xl rounded-xl p-6 flex flex-col items-center text-center"
-            variants={fadeInUp}
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80"
-              alt="Plataformas de Pagamento Eficientes"
-              width={600}
-              height={400}
-              className="rounded-md mb-6 w-full h-auto"
-            />
-            <div className="p-2 mb-3 bg-green-100 rounded-full"> {/* Adjusted padding and margin */}
-              <svg className="w-6 h-6 text-green-600" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
-            </div>
-            <h3 className="text-xl font-semibold text-green-700 mb-2">Plataformas de Pagamento</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Soluções de pagamento digital seguras e eficientes para otimizar transações e expandir seu alcance no mercado.
-            </p>
-          </motion.div>
-
-          {/* Service Card 3 */}
-          <motion.div
-            className="bg-white shadow-xl rounded-xl p-6 flex flex-col items-center text-center"
-            variants={fadeInUp}
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1563014959-7aaa83350992?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80"
-              alt="Análise de Risco e Segurança Garantida"
-              width={600}
-              height={400}
-              className="rounded-md mb-6 w-full h-auto"
-            />
-            <div className="p-2 mb-3 bg-green-100 rounded-full"> {/* Adjusted padding and margin */}
-              <svg className="w-6 h-6 text-green-600" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-            </div>
-            <h3 className="text-xl font-semibold text-green-700 mb-2">Análise de Risco e Compliance</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Ferramentas e consultoria para identificar riscos, garantir conformidade regulatória e proteger seus ativos.
-            </p>
-          </motion.div>
-        </motion.div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-6xl mx-auto">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              className="bg-gray-200 border-2 border-gray-200 rounded-xl shadow-xl overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300"
+              variants={fadeInUp}
+              whileHover={{ y: -5 }}
+              custom={index}
+            >
+              <div className="w-full h-56 sm:h-64 relative">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                  quality={85}
+                />
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-2xl font-semibold text-green-600 mb-3">{service.title}</h3>
+                <p className="text-gray-700 text-sm leading-relaxed mb-4 flex-grow">
+                  {service.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </motion.section>
 
       {/* Key Differentiators Section */}
@@ -172,134 +214,92 @@ export default function FinanceiroPage() {
           className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12 sm:mb-16"
           variants={fadeIn}
         >
-          Por Que Nos Escolher?
+          Por Que Nos <span className="text-green-500">Escolher?</span>
         </motion.h2>
 
-        <motion.div
-          className="grid md:grid-cols-2 gap-8 lg:gap-10 max-w-4xl mx-auto"
-        >
-          {/* Differentiator Item 1 */}
-          <motion.div
-            className="bg-gray-50 shadow-xl rounded-xl p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6"
-            variants={fadeInUp}
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
-              alt="Segurança Avançada"
-              width={400}
-              height={300}
-              className="rounded-lg shadow-md w-full h-auto sm:w-24 sm:h-24 md:w-32 md:h-32 object-cover flex-shrink-0"
-            />
-            <div className="text-center sm:text-left">
-              <h3 className="text-xl font-semibold text-green-700 mb-2">Segurança Avançada</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Protocolos de segurança de última geração para proteger seus dados e transações financeiras.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Differentiator Item 2 */}
-          <motion.div
-            className="bg-gray-50 shadow-xl rounded-xl p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6"
-            variants={fadeInUp}
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1677442135722-5fbfd9e9e7b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
-              alt="Tecnologia com IA"
-              width={400}
-              height={300}
-              className="rounded-lg shadow-md w-full h-auto sm:w-24 sm:h-24 md:w-32 md:h-32 object-cover flex-shrink-0"
-            />
-            <div className="text-center sm:text-left">
-              <h3 className="text-xl font-semibold text-green-700 mb-2">Tecnologia com IA</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Utilizamos inteligência artificial para fornecer insights precisos e otimizar suas decisões financeiras.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Differentiator Item 3 */}
-          <motion.div
-            className="bg-gray-50 shadow-xl rounded-xl p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6"
-            variants={fadeInUp}
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1582212175178-040eee15b14c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
-              alt="Suporte Dedicado"
-              width={400}
-              height={300}
-              className="rounded-lg shadow-md w-full h-auto sm:w-24 sm:h-24 md:w-32 md:h-32 object-cover flex-shrink-0"
-            />
-            <div className="text-center sm:text-left">
-              <h3 className="text-xl font-semibold text-green-700 mb-2">Suporte Dedicado</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Nossa equipe de especialistas está sempre pronta para oferecer suporte e orientação personalizada.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Differentiator Item 4 */}
-          <motion.div
-            className="bg-gray-50 shadow-xl rounded-xl p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6"
-            variants={fadeInUp}
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
-              alt="Soluções Personalizadas"
-              width={400}
-              height={300}
-              className="rounded-lg shadow-md w-full h-auto sm:w-24 sm:h-24 md:w-32 md:h-32 object-cover flex-shrink-0"
-            />
-            <div className="text-center sm:text-left">
-              <h3 className="text-xl font-semibold text-green-700 mb-2">Soluções Personalizadas</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Adaptamos nossas soluções às necessidades específicas de cada cliente, garantindo o máximo de eficiência.
-              </p>
-            </div>
-          </motion.div>
-        </motion.div>
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 max-w-4xl mx-auto">
+          {differentiators.map((item, index) => (
+            <motion.div
+              key={index}
+              className="bg-gray-200 border-2 border-gray-200  rounded-xl shadow-xl p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6"
+              variants={fadeInUp}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <div className="w-full sm:w-32 h-32 relative flex-shrink-0">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover rounded-lg"
+                  quality={85}
+                />
+              </div>
+              <div className="text-center sm:text-left">
+                <h3 className="text-xl font-semibold text-green-600 mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </motion.section>
 
       {/* Call to Action Section */}
       <motion.section
-        className="py-16 sm:py-20 lg:py-24 px-6 bg-gray-50 text-center"
+        id="contato"
+        className="py-16 sm:py-20 lg:py-24 px-6 bg-gradient-to-r from-green-600 to-green-700 text-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
         <motion.h2
-          className="text-3xl sm:text-4xl font-bold text-green-600 mb-6"
+          className="text-3xl sm:text-4xl font-bold text-white mb-6"
           variants={fadeIn}
         >
           Pronto para Elevar Sua Estratégia Financeira?
         </motion.h2>
         <motion.p
-          className="text-lg text-gray-700 max-w-xl mx-auto mb-10"
+          className="text-xl text-white max-w-xl mx-auto mb-10"
           variants={fadeIn}
         >
           Entre em contato conosco para uma consulta gratuita e descubra como podemos ajudar seu negócio a prosperar.
         </motion.p>
-        <motion.div variants={fadeIn}>
+        <motion.div
+          variants={fadeIn}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
           <Link
-            href="/#contato"
-            className="inline-block bg-green-600 text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600 focus:ring-offset-gray-50 transition-colors duration-300"
+            href="#"
+            className="inline-block bg-white text-green-700 font-semibold px-10 py-4 rounded-lg shadow-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-offset-green-600 transition-all duration-300"
           >
-            Fale Conosco
+            Agendar Consulta
           </Link>
         </motion.div>
       </motion.section>
 
-      {/* Footer area */}
-      <footer className="py-10 px-6 text-center border-t border-gray-300 bg-white">
-        <Link
-          href="/#projetos"
-          className="text-green-600 hover:text-green-700 hover:underline transition-colors duration-300"
+      {/* Footer */}
+      <footer className="py-10 px-6 text-center border-t border-gray-200 bg-gray-100 mt-auto">
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="inline-block"
         >
-          &larr; Voltar aos Projetos
-        </Link>
-        <p className="text-xs text-gray-600 mt-4">
-          Esta é uma página de demonstração. &copy; {new Date().getFullYear()} Matheus Fernandes.
+          <Link
+            href="/"
+            className="text-green-600 hover:text-green-800 hover:underline transition-colors duration-300 text-sm"
+          >
+            &larr; Voltar ao Portfólio Principal
+          </Link>
+        </motion.div>
+        <p className="text-xs text-gray-500 mt-4">
+          Página de demonstração de serviços financeiros.
+        </p>
+        <p className="text-xs text-gray-500 mt-1">
+          &copy; {new Date().getFullYear()} Matheus Fernandes. Design de Exemplo.
         </p>
       </footer>
     </div>
